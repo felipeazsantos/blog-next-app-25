@@ -25,6 +25,7 @@ export default function PostCoverImage({
     >
       <Image
         {...imageProps}
+        alt={imageProps.alt}
         className={clsx(
           'w-full',
           'h-full',

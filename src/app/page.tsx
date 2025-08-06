@@ -4,8 +4,6 @@ import PostCoverImage from '@/components/PostCoverImage';
 import PostHeading from '@/components/PostHeading';
 import PostList from '@/components/PostList';
 import { SpinLoader } from '@/components/SpinLoader';
-import Image from 'next/image';
-import Link from 'next/link';
 import React, { Suspense } from 'react';
 
 export default async function HomePage() {
