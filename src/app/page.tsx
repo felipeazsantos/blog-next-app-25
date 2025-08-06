@@ -1,5 +1,6 @@
 import Container from '@/components/Container';
 import Header from '@/components/Header';
+import PostCoverImage from '@/components/PostCoverImage';
 import PostHeading from '@/components/PostHeading';
 import PostList from '@/components/PostList';
 import { SpinLoader } from '@/components/SpinLoader';
@@ -13,16 +14,16 @@ export default async function HomePage() {
       <Header />
 
       <section className='grid grid-cols-1 gap-8 mb-16 sm:grid-cols-2 group'>
-        <Link className='w-full h-full overflow-hidden rounded-xl' href={'#'}>
-          <Image
-            className='w-full h-full object-cover object-center group-hover:scale-105 transition'
-            src={'/images/bryen_0.png'}
-            height={1200}
-            width={720}
-            alt='Título do post'
-            priority
-          />
-        </Link>
+        <PostCoverImage
+          linkProps={{ href: '#' }}
+          imageProps={{
+            src: '/images/bryen_5.png',
+            width: 1200,
+            height: 700,
+            alt: 'Alt da imagem',
+            priority: true,
+          }}
+        />
         <div className='flex flex-col gap-4 sm:justify-center'>
           <time
             className='text-slate-600 block text-sm/tight'
