@@ -16,7 +16,7 @@ export default function PostDetails({ post }: PostDetailsProps) {
         {post.createdAt}
       </time>
 
-      <PostHeading url='#' as='h2'>
+      <PostHeading url={`/post/${post.slug}`} as='h2'>
         {post.title}
       </PostHeading>
 
