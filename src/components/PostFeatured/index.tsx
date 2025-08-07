@@ -21,7 +21,13 @@ export default async function PostFeatured() {
         }}
       />
 
-      <PostDetails post={post} />
+      <PostDetails
+        postHeading='h1'
+        link={`/post/${post.slug}`}
+        createdAt={post.createdAt}
+        excerpt={post.excerpt}
+        title={post.title}
+      />
     </section>
   );
 }

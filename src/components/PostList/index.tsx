@@ -20,7 +20,13 @@ export default async function PostList() {
             }}
           />
 
-          <PostDetails post={post} />
+          <PostDetails
+            postHeading='h1'
+            link={`/post/${post.slug}`}
+            createdAt={post.createdAt}
+            excerpt={post.excerpt}
+            title={post.title}
+          />
         </div>
       ))}
     </div>

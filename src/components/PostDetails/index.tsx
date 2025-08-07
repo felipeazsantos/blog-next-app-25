@@ -1,28 +1,37 @@
 import React from 'react';
 import PostHeading from '../PostHeading';
-import { PostModel } from '@/models/post/post-model';
 import { formatDateTime, formatDistanceToNow } from '@/utils/format-datetime';
 
 type PostDetailsProps = {
-  post: PostModel;
+  postHeading: 'h1' | 'h2';
+  link: string;
+  createdAt: string;
+  title: string;
+  excerpt: string;
 };
 
-export default function PostDetails({ post }: PostDetailsProps) {
+export default function PostDetails({
+  postHeading,
+  link,
+  createdAt,
+  title,
+  excerpt,
+}: PostDetailsProps) {
   return (
     <div className='flex flex-col gap-4 sm:justify-center'>
       <time
         className='text-slate-600 block text-sm/tight'
-        dateTime={post.createdAt}
-        title={formatDateTime(post.createdAt)}
+        dateTime={createdAt}
+        title={formatDateTime(createdAt)}
       >
-        {formatDistanceToNow(post.createdAt)}
+        {formatDistanceToNow(createdAt)}
       </time>
 
-      <PostHeading url={`/post/${post.slug}`} as='h2'>
-        {post.title}
+      <PostHeading url={link} as={postHeading}>
+        {title}
       </PostHeading>
 
-      <p>{post.excerpt}</p>
+      <p>{excerpt}</p>
     </div>
   );
 }
