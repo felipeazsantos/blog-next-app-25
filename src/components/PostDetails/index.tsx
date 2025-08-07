@@ -1,6 +1,7 @@
 import React from 'react';
 import PostHeading from '../PostHeading';
 import { PostModel } from '@/models/post/post-model';
+import { formatDateTime, formatDistanceToNow } from '@/utils/format-datetime';
 
 type PostDetailsProps = {
   post: PostModel;
@@ -12,8 +13,9 @@ export default function PostDetails({ post }: PostDetailsProps) {
       <time
         className='text-slate-600 block text-sm/tight'
         dateTime={post.createdAt}
+        title={formatDateTime(post.createdAt)}
       >
-        {post.createdAt}
+        {formatDistanceToNow(post.createdAt)}
       </time>
 
       <PostHeading url={`/post/${post.slug}`} as='h2'>
