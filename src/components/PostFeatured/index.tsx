@@ -1,17 +1,17 @@
 import React from 'react';
 import PostDetails from '../PostDetails';
 import PostCoverImage from '../PostCoverImage';
-import { postRepository } from '@/repositories/post';
+import { findAllPublicPosts } from '@/lib/post/queries';
 
 export default async function PostFeatured() {
-  const post = await postRepository.findById(
-    '3993fcf7-2490-48ed-be2e-58c2030ee764',
-  );
+  const posts = await findAllPublicPosts();
+  const post = posts[0];
+  const postLink = `/post/${post.slug}`;
 
   return (
     <section className='grid grid-cols-1 gap-8 mb-16 sm:grid-cols-2 group'>
       <PostCoverImage
-        linkProps={{ href: `/post/${post.slug}` }}
+        linkProps={{ href: postLink }}
         imageProps={{
           src: post.coverImageUrl,
           width: 1200,
@@ -23,7 +23,7 @@ export default async function PostFeatured() {
 
       <PostDetails
         postHeading='h1'
-        link={`/post/${post.slug}`}
+        link={postLink}
         createdAt={post.createdAt}
         excerpt={post.excerpt}
         title={post.title}
