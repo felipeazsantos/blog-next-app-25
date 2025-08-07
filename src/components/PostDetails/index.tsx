@@ -1,6 +1,6 @@
 import React from 'react';
 import PostHeading from '../PostHeading';
-import { formatDateTime, formatDistanceToNow } from '@/utils/format-datetime';
+import PostTime from '../PostTime';
 
 type PostDetailsProps = {
   postHeading: 'h1' | 'h2';
@@ -19,13 +19,7 @@ export default function PostDetails({
 }: PostDetailsProps) {
   return (
     <div className='flex flex-col gap-4 sm:justify-center'>
-      <time
-        className='text-slate-600 block text-sm/tight'
-        dateTime={createdAt}
-        title={formatDateTime(createdAt)}
-      >
-        {formatDistanceToNow(createdAt)}
-      </time>
+      <PostTime dateTime={createdAt} />
 
       <PostHeading url={link} as={postHeading}>
         {title}
