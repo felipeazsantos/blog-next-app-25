@@ -1,3 +1,4 @@
+import SinglePost from '@/components/SinglePost';
 import { findPostBySlugCached } from '@/lib/post/queries';
 import { Metadata } from 'next';
 import React from 'react';
@@ -22,7 +23,5 @@ export async function generateMetadata({
 export default async function PostSlugPage({ params }: PostSlugPageProps) {
   const { slug } = await params;
 
-  const post = await findPostBySlugCached(slug);
-
-  return <div>{post.title}</div>;
+  return <SinglePost slug={slug} />;
 }
