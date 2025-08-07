@@ -1,5 +1,6 @@
 import { PostModel } from '@/models/post/post-model';
 import { postRepository } from '@/repositories/post';
+import { notFound } from 'next/navigation';
 import { cache } from 'react';
 
 export const findAllPublicPostsCached = cache(
@@ -10,7 +11,11 @@ export const findAllPublicPostsCached = cache(
 
 export const findPostBySlugCached = cache(
   async (slug: string): Promise<PostModel> => {
-    return await postRepository.findBySlug(slug);
+    const post = await postRepository.findBySlug(slug).catch(() => undefined);
+
+    if (!post) notFound();
+
+    return post;
   },
 );
 
