@@ -4,6 +4,7 @@ import { SpinLoader } from '../SpinLoader';
 import Image from 'next/image';
 import PostHeading from '../PostHeading';
 import PostTime from '../PostTime';
+import SafeMarkdown from '../SafeMarkdown';
 
 type SinglePostProps = {
   slug: string;
@@ -30,7 +31,7 @@ export default async function SinglePost({ slug }: SinglePostProps) {
 
         <p className='text-lg mb-4 text-slate-600 italic'>{post.excerpt}</p>
 
-        <div>{post.content}</div>
+        <SafeMarkdown markdown={post.content} />
       </article>
     </Suspense>
   );
