@@ -19,7 +19,7 @@
   "code-runner.ignoreSelection": true,
 
   "code-runner.executorMap": {
-    "typescript": "clear ; pnpx tsx"
+    "typescript": "clear ; npx tsx"
   },
 
   // 🛠 Formatação e Lint

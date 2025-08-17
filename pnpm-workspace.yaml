@@ -1,7 +1,0 @@
-ignoredBuiltDependencies:
-  - '@tailwindcss/oxide'
-  - better-sqlite3
-  - esbuild
-  - sharp
-  - sqlite3
-  - unrs-resolver
