@@ -1,7 +1,7 @@
 import React from 'react';
 import PostDetails from '../PostDetails';
 import PostCoverImage from '../PostCoverImage';
-import { findAllPublicPostsCached } from '@/lib/post/queries';
+import { findAllPublicPostsCached } from '@/lib/post/queries/public';
 
 export default async function PostFeatured() {
   const posts = await findAllPublicPostsCached();

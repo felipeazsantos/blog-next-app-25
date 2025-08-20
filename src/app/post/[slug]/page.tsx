@@ -1,5 +1,5 @@
 import SinglePost from '@/components/SinglePost';
-import { findPostBySlugCached } from '@/lib/post/queries';
+import { findPostBySlugCached } from '@/lib/post/queries/public';
 import { Metadata } from 'next';
 import React from 'react';
 

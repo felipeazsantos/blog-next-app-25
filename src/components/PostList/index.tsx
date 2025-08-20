@@ -1,7 +1,7 @@
 import React from 'react';
 import PostCoverImage from '../PostCoverImage';
 import PostDetails from '../PostDetails';
-import { findAllPublicPostsCached } from '@/lib/post/queries';
+import { findAllPublicPostsCached } from '@/lib/post/queries/public';
 
 export default async function PostList() {
   const posts = await findAllPublicPostsCached();

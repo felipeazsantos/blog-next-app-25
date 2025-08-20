@@ -1,4 +1,4 @@
-import { findPostBySlugCached } from '@/lib/post/queries';
+import { findPostBySlugCached } from '@/lib/post/queries/public';
 import React, { Suspense } from 'react';
 import { SpinLoader } from '../SpinLoader';
 import Image from 'next/image';
