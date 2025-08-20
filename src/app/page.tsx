@@ -3,6 +3,8 @@ import PostList from '@/components/PostList';
 import { SpinLoader } from '@/components/SpinLoader';
 import { Suspense } from 'react';
 
+export const dymanic = 'force-static';
+
 export default async function HomePage() {
   return (
     <div className='min-h-screen'>
