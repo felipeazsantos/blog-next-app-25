@@ -3,8 +3,6 @@ import { drizzleDb } from '.';
 import { postsTable } from './schemas';
 
 (async () => {
-  console.log('teste');
-
   const jsonPostRepository = new JsonPostRepository();
   const posts = await jsonPostRepository.findAll();
 
