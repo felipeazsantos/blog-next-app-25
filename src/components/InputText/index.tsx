@@ -3,9 +3,14 @@ import React, { useId } from 'react';
 
 type InputTextProps = {
   labelText?: string;
+  type?: 'text';
 } & React.ComponentProps<'input'>;
 
-export default function InputText({ labelText, ...props }: InputTextProps) {
+export default function InputText({
+  labelText,
+  type = 'text',
+  ...props
+}: InputTextProps) {
   const id = useId();
 
   return (
@@ -15,6 +20,7 @@ export default function InputText({ labelText, ...props }: InputTextProps) {
           {labelText}
         </label>
       )}
+
       <input
         {...props}
         className={clsx(
@@ -29,6 +35,7 @@ export default function InputText({ labelText, ...props }: InputTextProps) {
           props.className,
         )}
         id={id}
+        type={type}
       />
     </div>
   );
